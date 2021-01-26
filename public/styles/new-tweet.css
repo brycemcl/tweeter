@@ -34,3 +34,6 @@
 :focus {
   outline: none;
 }
+.new-tweet form div .over-characters {
+  color: red;
+}
