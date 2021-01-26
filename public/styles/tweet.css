@@ -4,6 +4,7 @@ div.tweet {
   display: flex;
   flex-direction: column;
   border: solid 0.25rem;
+  width: 100%;
 }
 div.tweet p,
 h3,
