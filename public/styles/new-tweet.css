@@ -29,8 +29,8 @@
   color: white;
 }
 .new-tweet form div output {
-  background-color: transparent;
-  display: flex;
-  justify-content: space-between;
   font-family: "Bungee", cursive, sans-serif;
+}
+:focus {
+  outline: none;
 }
