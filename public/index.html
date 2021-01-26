@@ -4,6 +4,9 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <!-- Font awesome icons -->
+    <script defer src="/fontawesome/js/all.js"></script>
+
     <!-- External CSS -->
     <link
       rel="stylesheet"
@@ -23,6 +26,8 @@
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/header.css" />
     <link rel="stylesheet" href="styles/new-tweet.css" />
+    <link rel="stylesheet" href="styles/tweet.css" />
+
     <!-- External JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
@@ -64,56 +69,40 @@
           </div>
         </form>
       </section>
-      <ol>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-        <li>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-          ipsam voluptatum dignissimos, voluptatem corrupti fugit cumque in quos
-          iure fugiat illum nam labore dolorem. Aliquid inventore pariatur
-          facilis adipisci fuga.
-        </li>
-      </ol>
+      <div class="tweet">
+        <div class="tweet-user">
+          <div>
+            <div class="tweet-user-profile_picture">
+              <img height="60px" width="auto" src="/images/profile-hex.png" />
+            </div>
+            <div class="tweet-user-display_name">
+              <h3>Lorem, ipsum</h3>
+            </div>
+          </div>
+          <div class="tweet-user-handle">
+            <h4>@loremipsum</h4>
+          </div>
+        </div>
+        <div class="tweet-contents">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
+            libero reprehenderit, minima placeat pariatur aperiam totam eaque
+            numquam provident laudantium?
+          </p>
+        </div>
+        <div class="tweet-status">
+          <div class="tweet-status-date">
+            <p>yesterday at 04:30 AM</p>
+          </div>
+          <div class="tweet-status-actions">
+            <i class="fas fa-flag"></i>
+            <i class="far fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+            <i class="far fa-heart"></i>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

@@ -1,0 +1,45 @@
+div.tweet {
+  background-color: transparent;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.25rem;
+}
+div.tweet p,
+h3,
+h4 {
+  padding: 0.25rem;
+  margin: 0px;
+}
+div.tweet div.tweet-user {
+  display: flex;
+  justify-content: space-between;
+}
+div.tweet div.tweet-user div {
+  padding: 0px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+div.tweet:hover {
+  box-shadow: 10px 10px grey;
+}
+div.tweet:hover .tweet-user-handle {
+  color: grey;
+}
+div.tweet div.tweet-status {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.tweet div.tweet-status-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div.tweet .tweet-contents {
+  border-top: none;
+  border-right: none;
+  border-bottom: solid;
+  border-left: none;
+}
