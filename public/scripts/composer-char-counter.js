@@ -1,12 +1,17 @@
-window.addEventListener('load', (event) => {
-  document.querySelector('#tweet-text').addEventListener('input', (event) => {
-    const remainingCharacters = (140 - document.querySelector('#tweet-text').value.length);
-    const counter = document.querySelector("#counter");
-    if (remainingCharacters >= 0) {
-      counter.classList.remove("over-characters");
-    } else {
-      counter.classList.add("over-characters");
-    }
-    counter.value = remainingCharacters.toString();
-  });
+window.addEventListener("load", (event) => {
+  const updateCharacterCounter = (parentQuerySelector) => {
+    document
+      .querySelector(parentQuerySelector)
+      .addEventListener("input", function (event) {
+        const remainingCharacters = 140 - this.value.length;
+        const counter = document.querySelector("#counter");
+        if (remainingCharacters >= 0) {
+          counter.classList.remove("over-characters");
+        } else {
+          counter.classList.add("over-characters");
+        }
+        counter.value = remainingCharacters.toString();
+      });
+  };
+  updateCharacterCounter("#tweet-text");
 });
