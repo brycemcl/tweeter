@@ -1,0 +1,36 @@
+.new-tweet {
+  width: 100%;
+  background-color: transparent;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: center;
+}
+.new-tweet textarea {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+  resize: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: solid;
+  border-left: none;
+}
+.new-tweet form div {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive, sans-serif;
+}
+.new-tweet form div button {
+  padding: 5px;
+  background-color: #4056a1;
+  border: none;
+  color: white;
+}
+.new-tweet form div output {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive, sans-serif;
+}
