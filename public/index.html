@@ -21,15 +21,10 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" />
     <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/new-tweet.css" />
     <!-- External JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
-    <script
-      type="text/javascript"
-      src="/scripts/composer-char-counter.js"
-    ></script>
   </head>
   <body>
     <!-- Top nav bar (fixed) -->
@@ -49,18 +44,7 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
-        <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" id="counter" for="tweet-text"
-              >140</output
-            >
-          </div>
-        </form>
-      </section>
+      <tweet-new></tweet-new>
       <tweet-user
         user-profile-image="/images/profile-hex.png"
         user-profile-name="Bryce McLachlan"
@@ -70,10 +54,10 @@
         info-actions-flag=""
         info-actions-retweet=""
         info-actions-heart=""
-        class="full-width"
       >
       </tweet-user>
       <script src="/components/tweet/tweet.js"></script>
+      <script src="/components/tweet-new/tweet-new.js"></script>
     </main>
   </body>
 </html>

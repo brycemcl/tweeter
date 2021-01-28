@@ -46,6 +46,7 @@ main {
   align-items: center;
 }
 
-.full-width {
+tweet-new,
+tweet-user {
   width: 100%;
 }

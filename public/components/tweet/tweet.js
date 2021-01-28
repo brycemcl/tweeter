@@ -52,20 +52,12 @@
       super();
       this.attachShadow({ mode: "open" });
       this.shadowRoot.appendChild(template.content.cloneNode(true));
-      // this.shadowRoot.querySelector('.tweet-contents').innerText = this.getAttribute('content');
-      // dom.watch({
-      //   autoReplaceSvgRoot: this.shadowRoot,
-      //   observeMutationsRoot: this.shadowRoot
-      // });
 
       this.shadowRoot.querySelector('.tweet-user-profile p').innerText = this.getAttribute('user-profile-name');
       this.shadowRoot.querySelector('.tweet-user-profile img').src = this.getAttribute('user-profile-image');
       this.shadowRoot.querySelector('.tweet-user-handle p').innerText = this.getAttribute('user-profile-handle');
       this.shadowRoot.querySelector('.tweet-contents p').innerText = this.getAttribute('contents');
       this.shadowRoot.querySelector('.tweet-info-date p').innerText = this.getAttribute('info-date');
-
-
-
     }
   }
   window.customElements.define('tweet-user', Tweet);
