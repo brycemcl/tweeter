@@ -21,10 +21,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-top: solid;
 }
 .tweet-user-profile img {
   width: auto;
-  height: 100px;
+  height: 1.5rem;
 }
 .tweet p {
   margin: 0.5rem 0px;
