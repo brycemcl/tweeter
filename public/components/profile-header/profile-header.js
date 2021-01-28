@@ -28,7 +28,6 @@
 </div>
 </header>
 `;
-
   class Profile extends HTMLElement {
     constructor() {
       super();

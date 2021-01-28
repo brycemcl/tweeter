@@ -31,7 +31,6 @@
   </form>
 </section>
 `;
-
   class Tweet extends HTMLElement {
     constructor() {
       super();

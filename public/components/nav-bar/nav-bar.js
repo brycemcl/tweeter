@@ -24,14 +24,11 @@
 </nav>
 <div class="undernav"></div>
 `;
-
   class Nav extends HTMLElement {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
       this.shadowRoot.appendChild(template.content.cloneNode(true));
-      // this.shadowRoot.querySelector('div img').src = this.getAttribute('profile-src');
-      // this.shadowRoot.querySelector('div h2').innerText = this.getAttribute('profile-name');
     }
   }
   window.customElements.define('nav-bar', Nav);

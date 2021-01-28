@@ -46,7 +46,6 @@
   </div>
 </div>  
 `;
-
   class Tweet extends HTMLElement {
     constructor() {
       super();
