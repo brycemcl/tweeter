@@ -20,7 +20,6 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css" />
-    <link rel="stylesheet" href="styles/header.css" />
     <!-- External JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <!-- App JS -->
@@ -33,15 +32,11 @@
       <span> <strong>Write</strong> a new tweet</span>
     </nav>
     <div class="undernav"></div>
-    <header>
-      <div>
-        <img src="/images/profile-hex.png" />
-      </div>
-      <br />
-      <div>
-        <h2>Your Name</h2>
-      </div>
-    </header>
+    <profile-header
+      profile-src="/images/profile-hex.png"
+      profile-name="Bryce McLachlan"
+    ></profile-header>
+
     <!-- Page-specific (main) content here -->
     <main class="container">
       <tweet-new></tweet-new>
@@ -58,6 +53,7 @@
       </tweet-user>
       <script src="/components/tweet/tweet.js"></script>
       <script src="/components/tweet-new/tweet-new.js"></script>
+      <script src="/components/profile-header/profile-header.js"></script>
     </main>
   </body>
 </html>

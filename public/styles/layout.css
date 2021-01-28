@@ -47,6 +47,7 @@ main {
 }
 
 tweet-new,
-tweet-user {
+tweet-user,
+profile-header {
   width: 100%;
 }
