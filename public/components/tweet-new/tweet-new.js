@@ -1,3 +1,5 @@
+import jquery from 'https://cdn.skypack.dev/jquery';
+const $ = jquery;
 const template = document.createElement("template");
 template.innerHTML =
   `
@@ -48,9 +50,9 @@ class Tweet extends HTMLElement {
     });
     const form = this.shadowRoot.querySelector('form');
     form.addEventListener("submit", (event) => {
-      console.log($(this.shadowRoot.querySelector('#tweet-text')).serialize());
-      $.post("/tweets",);
       event.preventDefault();
+      // console.log($(this.shadowRoot.querySelector('#tweet-text')).serialize());
+      $.post("/tweets", $(this.shadowRoot.querySelector('#tweet-text')).serialize());
     });
   }
 }
