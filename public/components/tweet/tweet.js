@@ -51,7 +51,8 @@
       super();
       this.attachShadow({ mode: "open" });
       this.shadowRoot.appendChild(template.content.cloneNode(true));
-
+    }
+    connectedCallback() {
       this.shadowRoot.querySelector('.tweet-user-profile p').innerText = this.getAttribute('user-profile-name');
       this.shadowRoot.querySelector('.tweet-user-profile img').src = this.getAttribute('user-profile-image');
       this.shadowRoot.querySelector('.tweet-user-handle p').innerText = this.getAttribute('user-profile-handle');

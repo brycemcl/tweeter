@@ -43,6 +43,7 @@ main {
 tweet-new,
 tweet-user,
 profile-header,
-nav-bar {
+nav-bar,
+.full-width {
   width: 100%;
 }
