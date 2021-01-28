@@ -2,7 +2,7 @@ import jquery from 'https://cdn.skypack.dev/jquery';
 const $ = jquery;
 const renderTweets = function (tweets) {
   $(".tweets").empty();
-  tweets.forEach(tweet => {
+  tweets.reverse().forEach(tweet => {
     const newTweet = $("<tweet-user></tweet-user>");
     $(newTweet).attr({
       "user-profile-image": tweet.user.avatars,
