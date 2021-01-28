@@ -1,7 +1,6 @@
-(() => {
-  const template = document.createElement("template");
-  template.innerHTML =
-    `
+const template = document.createElement("template");
+template.innerHTML =
+  `
 <!-- fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
@@ -28,14 +27,13 @@
 </div>
 </header>
 `;
-  class Profile extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
-      this.shadowRoot.querySelector('div img').src = this.getAttribute('profile-src');
-      this.shadowRoot.querySelector('div h2').innerText = this.getAttribute('profile-name');
-    }
+class Profile extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowRoot.querySelector('div img').src = this.getAttribute('profile-src');
+    this.shadowRoot.querySelector('div h2').innerText = this.getAttribute('profile-name');
   }
-  window.customElements.define('profile-header', Profile);
-})();
+}
+window.customElements.define('profile-header', Profile);

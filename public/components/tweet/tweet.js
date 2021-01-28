@@ -1,7 +1,6 @@
-(() => {
-  const template = document.createElement("template");
-  template.innerHTML =
-    `
+const template = document.createElement("template");
+template.innerHTML =
+  `
 <!-- fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
@@ -46,19 +45,18 @@
   </div>
 </div>  
 `;
-  class Tweet extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
-    }
-    connectedCallback() {
-      this.shadowRoot.querySelector('.tweet-user-profile p').innerText = this.getAttribute('user-profile-name');
-      this.shadowRoot.querySelector('.tweet-user-profile img').src = this.getAttribute('user-profile-image');
-      this.shadowRoot.querySelector('.tweet-user-handle p').innerText = this.getAttribute('user-profile-handle');
-      this.shadowRoot.querySelector('.tweet-contents p').innerText = this.getAttribute('contents');
-      this.shadowRoot.querySelector('.tweet-info-date p').innerText = this.getAttribute('info-date');
-    }
+class Tweet extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
-  window.customElements.define('tweet-user', Tweet);
-})();
+  connectedCallback() {
+    this.shadowRoot.querySelector('.tweet-user-profile p').innerText = this.getAttribute('user-profile-name');
+    this.shadowRoot.querySelector('.tweet-user-profile img').src = this.getAttribute('user-profile-image');
+    this.shadowRoot.querySelector('.tweet-user-handle p').innerText = this.getAttribute('user-profile-handle');
+    this.shadowRoot.querySelector('.tweet-contents p').innerText = this.getAttribute('contents');
+    this.shadowRoot.querySelector('.tweet-info-date p').innerText = this.getAttribute('info-date');
+  }
+}
+window.customElements.define('tweet-user', Tweet);

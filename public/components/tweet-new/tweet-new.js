@@ -1,7 +1,6 @@
-(() => {
-  const template = document.createElement("template");
-  template.innerHTML =
-    `
+const template = document.createElement("template");
+template.innerHTML =
+  `
 <!-- fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com" />
 <link
@@ -31,23 +30,28 @@
   </form>
 </section>
 `;
-  class Tweet extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: "open" });
-      this.shadowRoot.appendChild(template.content.cloneNode(true));
-      const shadowRoot = this.shadowRoot;
-      this.shadowRoot.querySelector('#tweet-text').addEventListener("input", function (event) {
-        const remainingCharacters = 140 - this.value.length;
-        const counter = shadowRoot.querySelector("#counter");
-        if (remainingCharacters >= 0) {
-          counter.classList.remove("over-characters");
-        } else {
-          counter.classList.add("over-characters");
-        }
-        counter.value = remainingCharacters.toString();
-      });
-    }
+class Tweet extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    const shadowRoot = this.shadowRoot;
+    this.shadowRoot.querySelector('#tweet-text').addEventListener("input", function (event) {
+      const remainingCharacters = 140 - this.value.length;
+      const counter = shadowRoot.querySelector("#counter");
+      if (remainingCharacters >= 0) {
+        counter.classList.remove("over-characters");
+      } else {
+        counter.classList.add("over-characters");
+      }
+      counter.value = remainingCharacters.toString();
+    });
+    const form = this.shadowRoot.querySelector('form');
+    form.addEventListener("submit", (event) => {
+      console.log($(this.shadowRoot.querySelector('#tweet-text')).serialize());
+      $.post("/tweets",);
+      event.preventDefault();
+    });
   }
-  window.customElements.define('tweet-new', Tweet);
-})();
+}
+window.customElements.define('tweet-new', Tweet);
