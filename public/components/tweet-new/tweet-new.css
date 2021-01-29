@@ -30,6 +30,8 @@ label,
 button {
   border: none;
   background: #4056a1;
+  padding: 0.25rem;
+  color: white;
   font-family: "Bungee", cursive, sans-serif;
 }
 
