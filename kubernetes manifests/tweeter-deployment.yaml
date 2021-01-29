@@ -18,7 +18,7 @@ spec:
         - env:
             - name: NODE_ENV
               value: production
-          image: tweeter
+          image: brycemclachlan/tweeter
           name: tweeter
           ports:
             - containerPort: 8080
