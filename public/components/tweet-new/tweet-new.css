@@ -33,6 +33,7 @@ button {
   padding: 0.25rem;
   color: white;
   font-family: "Bungee", cursive, sans-serif;
+  outline: none;
 }
 
 #counter.over-characters {
