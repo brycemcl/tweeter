@@ -1,6 +1,7 @@
 import jquery from 'https://cdn.skypack.dev/jquery';
 const $ = jquery;
 import updatePage from '/scripts/updatePage.js';
+import checkIfValidTweet from '/scripts/checkIfValidTweet.js';
 const template = document.createElement("template");
 template.innerHTML =
   `
@@ -39,9 +40,9 @@ class Tweet extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     const shadowRoot = this.shadowRoot;
+    const counter = shadowRoot.querySelector("#counter");
     this.shadowRoot.querySelector('#tweet-text').addEventListener("input", function (event) {
       const remainingCharacters = 140 - this.innerText.length;
-      const counter = shadowRoot.querySelector("#counter");
       if (remainingCharacters >= 0) {
         counter.classList.remove("over-characters");
       } else {
@@ -52,8 +53,16 @@ class Tweet extends HTMLElement {
     const form = this.shadowRoot.querySelector('form');
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      const text = { text: this.shadowRoot.querySelector('#tweet-text').innerText };
-      $.post("/tweets", $.param(text)).done(() => { updatePage(); });
+      const tweet = { text: this.shadowRoot.querySelector('#tweet-text').innerText };
+      if (checkIfValidTweet(tweet).valid) {
+        $.post("/tweets", $.param(tweet)).done(() => {
+          updatePage();
+          this.shadowRoot.querySelector('#tweet-text').innerText = "";
+          counter.innerText = 140;
+        });
+      } else {
+        alert(checkIfValidTweet(tweet).error);
+      }
     });
   }
 }
