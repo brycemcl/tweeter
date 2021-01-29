@@ -20,18 +20,18 @@ template.innerHTML =
 <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 <!-- component css -->
 <link rel="stylesheet" href="/components/tweet-new/tweet-new.css" />
-<section class="new-tweet">
-  <form action="/tweets" method="POST">
-    <label for="tweet-text">What are you humming about?</label>
-    <textarea name="text" id="tweet-text"></textarea>
-    <div>
-      <button type="submit">Tweet</button>
-      <output name="counter" class="counter" id="counter" for="tweet-text"
-        >140</output
-      >
-    </div>
-  </form>
-</section>
+<form class="tweet">
+<label class="tweet-label" for="tweet-text"
+  >What are you humming about?</label
+>
+<div name="text" id="tweet-text" contenteditable="true"></div>
+<div class="actions">
+  <button type="submit">Tweet</button>
+  <output name="counter" class="counter" id="counter" for="tweet-text"
+    >140</output
+  >
+</div>
+</form>
 `;
 class Tweet extends HTMLElement {
   constructor() {
@@ -40,19 +40,20 @@ class Tweet extends HTMLElement {
     this.shadowRoot.appendChild(template.content.cloneNode(true));
     const shadowRoot = this.shadowRoot;
     this.shadowRoot.querySelector('#tweet-text').addEventListener("input", function (event) {
-      const remainingCharacters = 140 - this.value.length;
+      const remainingCharacters = 140 - this.innerText.length;
       const counter = shadowRoot.querySelector("#counter");
       if (remainingCharacters >= 0) {
         counter.classList.remove("over-characters");
       } else {
         counter.classList.add("over-characters");
       }
-      counter.value = remainingCharacters.toString();
+      counter.innerText = remainingCharacters.toString();
     });
     const form = this.shadowRoot.querySelector('form');
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      $.post("/tweets", $(this.shadowRoot.querySelector('#tweet-text')).serialize()).done(() => { updatePage(); });
+      const text = { text: this.shadowRoot.querySelector('#tweet-text').innerText };
+      $.post("/tweets", $.param(text)).done(() => { updatePage(); });
     });
   }
 }
