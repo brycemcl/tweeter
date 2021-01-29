@@ -26,6 +26,7 @@ body {
 /* fonts */
 * {
   font-family: "Source Sans Pro", sans-serif;
+  word-break: break-all;
 }
 
 body {
@@ -65,9 +66,6 @@ body,
   .flex {
     flex-direction: row;
     align-items: flex-start;
-  }
-  .flex > * {
-    width: 50%;
   }
   .content {
     width: 90%;
