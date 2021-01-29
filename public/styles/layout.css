@@ -27,12 +27,14 @@ body {
 * {
   font-family: "Source Sans Pro", sans-serif;
 }
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 main {
   width: 90%;
   display: flex;
@@ -40,10 +42,31 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+.flex {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 tweet-new,
 tweet-user,
 profile-header,
 nav-bar,
+body,
+.content,
 .full-width {
   width: 100%;
+}
+
+@media (min-width: 800px) {
+  .flex {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .content {
+    width: 90%;
+  }
 }

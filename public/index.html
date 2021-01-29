@@ -26,15 +26,19 @@
   </head>
   <body>
     <nav-bar></nav-bar>
-    <profile-header
-      profile-src="/images/profile-hex.png"
-      profile-name="Bryce McLachlan"
-    ></profile-header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <tweet-new></tweet-new>
-      <section class="tweets full-width"></section>
-    </main>
+    <div class="flex full-width">
+      <profile-header
+        profile-src="/images/profile-hex.png"
+        profile-name="Bryce McLachlan"
+      ></profile-header>
+      <!-- Page-specific (main) content here -->
+      <main>
+        <div class="content">
+          <tweet-new></tweet-new>
+          <section class="tweets full-width"></section>
+        </div>
+      </main>
+    </div>
     <script type="module" src="/components/tweet/tweet.js"></script>
     <script type="module" src="/components/tweet-new/tweet-new.js"></script>
     <script
