@@ -1,8 +1,13 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+[Live demo](https://tweeter.brycemclachlan.me/)
 
-This is a student project to learn html, css, and jquery.
+This is a student project to learn html, css, and jquery. Tweeter is a simple, single-page Twitter clone.
+
+!["Desktop"](/screenshots/1.jpeg)
+!["Tablet"](/screenshots/2.jpeg)
+!["Phone(before the fold)"](/screenshots/3.jpeg)
+!["Phone(after the fold)"](/screenshots/4.jpeg)
 
 ## Getting Started
 
@@ -10,6 +15,15 @@ This is a student project to learn html, css, and jquery.
 2. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm start` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
+
+### Containerised
+
+- Run the server using the `docker-compose up` command.
+
+### Kubernetes
+
+In the "kubernetes manifests" folder you will find manifests. You will need to modify `tinyapp-ingress.yaml` to suit your environment.
+
 
 ## Dependencies
 
