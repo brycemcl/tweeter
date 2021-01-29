@@ -36,3 +36,25 @@ button {
 #counter.over-characters {
   color: red;
 }
+
+.error {
+  height: 0rem;
+  color: red;
+  width: 100%;
+  border: red solid;
+  display: flex;
+  align-items: center;
+  margin: 0rem;
+  padding: 0.5rem;
+  transform: scaleY(0);
+}
+.error.error-active {
+  height: 4rem;
+  transform: scaleY(1);
+  transition: all 1s;
+}
+.error.error-inactive {
+  height: 0rem;
+  transform: scaleY(0);
+  transition: all 1s;
+}

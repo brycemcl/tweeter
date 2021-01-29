@@ -22,6 +22,7 @@ template.innerHTML =
 <!-- component css -->
 <link rel="stylesheet" href="/components/tweet-new/tweet-new.css" />
 <form class="tweet">
+<p class="error"></p>
 <label class="tweet-label" for="tweet-text"
   >What are you humming about?</label
 >
@@ -39,9 +40,12 @@ class Tweet extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
-    const shadowRoot = this.shadowRoot;
-    const counter = shadowRoot.querySelector("#counter");
-    this.shadowRoot.querySelector('#tweet-text').addEventListener("input", function (event) {
+    const counter = this.shadowRoot.querySelector("#counter");
+    const tweetText = this.shadowRoot.querySelector('#tweet-text');
+    const form = this.shadowRoot.querySelector('form');
+    const error = this.shadowRoot.querySelector('.error');
+    //update counter
+    tweetText.addEventListener("input", function (event) {
       const remainingCharacters = 140 - this.innerText.length;
       if (remainingCharacters >= 0) {
         counter.classList.remove("over-characters");
@@ -49,19 +53,27 @@ class Tweet extends HTMLElement {
         counter.classList.add("over-characters");
       }
       counter.innerText = remainingCharacters.toString();
+
     });
-    const form = this.shadowRoot.querySelector('form');
+    //form submit
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      const tweet = { text: this.shadowRoot.querySelector('#tweet-text').innerText };
+      const tweet = { text: tweetText.innerText };
       if (checkIfValidTweet(tweet).valid) {
         $.post("/tweets", $.param(tweet)).done(() => {
           updatePage();
-          this.shadowRoot.querySelector('#tweet-text').innerText = "";
+          tweetText.innerText = "";
           counter.innerText = 140;
         });
       } else {
-        alert(checkIfValidTweet(tweet).error);
+        // alert(checkIfValidTweet(tweet).error);
+        error.innerText = checkIfValidTweet(tweet).error;
+        error.classList.remove("error-inactive");
+        error.classList.add("error-active");
+        setTimeout(() => {
+          error.classList.remove("error-active");
+          error.classList.add("error-inactive");
+        }, 5000);
       }
     });
   }
