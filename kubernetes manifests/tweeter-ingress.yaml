@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tweeter
+  annotations:   
+    cert-manager.io/cluster-issuer: "letsencrypt-issuer"
+spec:
+  ingressClassName: "nginx" 
+  tls:
+  - hosts:
+    - tweeter.brycemclachlan.me
+    secretName: tweeter-tls
+  rules:
+  - host: tweeter.brycemclachlan.me
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: tweeter
+            port: 
+              number: 8080
+
+
