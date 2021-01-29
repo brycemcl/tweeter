@@ -66,6 +66,9 @@ body,
     flex-direction: row;
     align-items: flex-start;
   }
+  .flex > * {
+    width: 50%;
+  }
   .content {
     width: 90%;
   }
