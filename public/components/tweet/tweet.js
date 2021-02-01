@@ -57,7 +57,7 @@ class Tweet extends HTMLElement {
     this.shadowRoot.querySelector('.tweet-user-profile img').src = this.getAttribute('user-profile-image');
     this.shadowRoot.querySelector('.tweet-user-handle p').innerText = this.getAttribute('user-profile-handle');
     this.shadowRoot.querySelector('.tweet-contents p').innerText = this.getAttribute('contents');
-    this.shadowRoot.querySelector('.tweet-info-date p').innerText = formatRelative(new Date(), new Date(Number(this.getAttribute('info-date'))));
+    this.shadowRoot.querySelector('.tweet-info-date p').innerText = formatRelative(new Date(Number(this.getAttribute('info-date'))), new Date());
   }
 }
 window.customElements.define('tweet-user', Tweet);
