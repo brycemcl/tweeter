@@ -19,7 +19,7 @@ template.innerHTML =
 <!-- component css -->
 <link rel="stylesheet" href="/components/tweet/tweet.css" />
 <!-- fontawesome -->
-<link rel="stylesheet" href="/fontawesome/css/all.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
 <!-- inner html -->
 <div class="tweet">
   <div class="tweet-user">
